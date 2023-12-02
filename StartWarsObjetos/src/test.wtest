@@ -1,0 +1,12 @@
+import example.*
+const nave1 = new Tie(vida = 100)
+const planetaDebil = new Planeta(cantPoblacion = 2)
+const planetaFuerte = new Planeta(cantPoblacion = 100)
+test "Un planeta con POCA poblacion(poca defensa) es atacada por un tie y SI es conquistada" {
+	nave1.atacarPlaneta(planetaDebil)
+	assert.that(planetaDebil.estaBajoLaInfluenciaDelImperio())
+}
+test "Un planeta con MUCHA poblacion(mucha defensa) es atacada por un tie y NO es conquistada" {
+	nave1.atacarPlaneta(planetaFuerte)
+	assert.notThat(planetaFuerte.estaBajoLaInfluenciaDelImperio())
+}
